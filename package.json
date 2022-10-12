@@ -1,15 +1,32 @@
 {
-  "name": "Sample App",
+  "name": "kube-app",
   "main": "index.html",
   "single-instance": true,
   "window": {
-    "position": "center",
     "width": 600,
     "height": 400,
-    "frame" : true
+    "frame": false,
+    "toolbar": false,
+    "transparent": true,
+    "position": "center",
+    "icon": "src/assets/icon.png"
   },
   "webkit": {
+    "page-cache": true,
     "plugin": true
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "start": "go build . && nw .",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "nuxt": "3.0.0-rc.11"
+  }
 }
